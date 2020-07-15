@@ -35,10 +35,12 @@ open class LBTAListCell<T>: UICollectionViewCell {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        setupLayouts()
     }
     
     /// In your custom ListCell classes, just override setupViews() to provide custom behavior.  We do this to avoid overriding init methods.
     open func setupViews() {}
+    open func setupLayouts() {}
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError()
