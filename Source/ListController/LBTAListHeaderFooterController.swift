@@ -27,6 +27,8 @@ open class LBTAListHeaderFooterController<T: LBTAListCell<U>, U, H: UICollection
     open var items = [U]() {
         didSet {
             DispatchQueue.main.async {
+                let isShow = self.items.count > 0
+                self.showEmptyDataImage(isShow: isShow, targetView: self.view)
                 self.collectionView.reloadData()
             }
         }
@@ -115,4 +117,42 @@ open class LBTAListHeaderFooterController<T: LBTAListCell<U>, U, H: UICollection
         fatalError("You most likely have a Storyboard controller that uses this class, please remove any instance of LBTAListHeaderController or sublasses of this component from your Storyboard files.")
     }
     
+    //MARK:  //显示空白页
+    private  let emptyDataIdentifier = "emptyDataIdentifier"
+    func showEmptyDataImage(isShow: Bool, targetView: UIView) {
+        
+        if isShow {
+            let bottomView = UIView(frame: CGRect(x: 0, y: 0, width: 152, height: 160))
+            
+            let emptyImage = UIImageView(image: #imageLiteral(resourceName: "empty-image-default@2x.png"))
+            emptyImage.frame = CGRect(x: 0, y: 0, width: 152, height: 100)
+            bottomView.addSubview(emptyImage)
+            
+            let titleLabel = UILabel.init()
+            titleLabel.text = "暂无数据"
+            titleLabel.textColor =  UIColor(red: 153, green: 153, blue: 153, alpha: 1)
+            titleLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+            titleLabel.textAlignment = .center
+            titleLabel.frame = CGRect(x: 0, y: 110, width: 152, height: 20)
+            bottomView.addSubview(titleLabel)
+            
+            targetView.addSubview(bottomView)
+            bottomView.withWidth(152).withHeight(160)
+            bottomView.centerInSuperview()
+            bottomView.restorationIdentifier = emptyDataIdentifier
+            
+        } else {
+            
+            for item in targetView.subviews {
+                if item.restorationIdentifier == emptyDataIdentifier {
+                    
+                    for view in item.subviews {
+                        view.removeFromSuperview()
+                    }
+                    item.removeFromSuperview()
+                }
+            }
+        }
+        
+    }
 }
