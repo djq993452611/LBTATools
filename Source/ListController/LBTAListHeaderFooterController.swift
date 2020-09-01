@@ -24,12 +24,17 @@ import UIKit
 open class LBTAListHeaderFooterController<T: LBTAListCell<U>, U, H: UICollectionReusableView, F: UICollectionReusableView>: UICollectionViewController {
     
     /// An array of U objects this list will render. When using items.append, you still need to manually call reloadData.
+    //MARK:基类的items赋值，刷新列表
     open var items = [U]() {
         didSet {
             DispatchQueue.main.async {
-                let isShow = self.items.count > 0
-                self.showEmptyDataImage(isShow: isShow, targetView: self.view)
                 self.collectionView.reloadData()
+                
+                self.removeEmptyDataImage()
+                if self.items.count == 0 {
+                    self.showEmptyDataImage()
+                }
+                
             }
         }
     }
@@ -86,7 +91,7 @@ open class LBTAListHeaderFooterController<T: LBTAListCell<U>, U, H: UICollection
         }
         return supplementaryView
     }
-    
+    //MARK:基类实现items的个数协议
     override open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
@@ -117,42 +122,42 @@ open class LBTAListHeaderFooterController<T: LBTAListCell<U>, U, H: UICollection
         fatalError("You most likely have a Storyboard controller that uses this class, please remove any instance of LBTAListHeaderController or sublasses of this component from your Storyboard files.")
     }
     
-    //MARK:  //显示空白页
+    //MARK:  先移除已经存在的空白页内容
     private  let emptyDataIdentifier = "emptyDataIdentifier"
-    func showEmptyDataImage(isShow: Bool, targetView: UIView) {
-        
-        if isShow {
-            let bottomView = UIView(frame: CGRect(x: 0, y: 0, width: 152, height: 160))
-            
-            let emptyImage = UIImageView(image: #imageLiteral(resourceName: "empty-image-default@2x.png"))
-            emptyImage.frame = CGRect(x: 0, y: 0, width: 152, height: 100)
-            bottomView.addSubview(emptyImage)
-            
-            let titleLabel = UILabel.init()
-            titleLabel.text = "暂无数据"
-            titleLabel.textColor =  UIColor(red: 153, green: 153, blue: 153, alpha: 1)
-            titleLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
-            titleLabel.textAlignment = .center
-            titleLabel.frame = CGRect(x: 0, y: 110, width: 152, height: 20)
-            bottomView.addSubview(titleLabel)
-            
-            targetView.addSubview(bottomView)
-            bottomView.withWidth(152).withHeight(160)
-            bottomView.centerInSuperview()
-            bottomView.restorationIdentifier = emptyDataIdentifier
-            
-        } else {
-            
-            for item in targetView.subviews {
-                if item.restorationIdentifier == emptyDataIdentifier {
-                    
-                    for view in item.subviews {
-                        view.removeFromSuperview()
-                    }
-                    item.removeFromSuperview()
+    func removeEmptyDataImage() {
+        for item in self.view.subviews {
+            if item.restorationIdentifier == emptyDataIdentifier {
+                for view in item.subviews {
+                    view.removeFromSuperview()
                 }
+                item.removeFromSuperview()
             }
         }
+    }
+    //MARK:任何添加空白页内容
+    func showEmptyDataImage() {
+        
+        let bottomView = UIView(frame: CGRect(x: 0, y: 0, width: 152, height: 160))
+        //这里注意图片资源的名字，在项目图片资源导入
+        let emptyImage = UIImageView(image: UIImage(named: "empty-image-default"))
+        emptyImage.frame = CGRect(x: 0, y: 0, width: 152, height: 100)
+        bottomView.addSubview(emptyImage)
+        
+        let nameLabel = UILabel.init()
+        nameLabel.text = "暂无数据"
+        nameLabel.textColor = UIColor.lightGray //UIColor(red: 153, green: 153, blue: 153, alpha: 1)
+        nameLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+        nameLabel.textAlignment = .center
+        nameLabel.frame = CGRect(x: 0, y: 110, width: 152, height: 20)
+        bottomView.addSubview(nameLabel)
+        
+        self.view.addSubview(bottomView)
+        self.view.bringSubviewToFront(bottomView)
+        bottomView.withWidth(152).withHeight(160)
+        bottomView.centerInSuperview()
+        bottomView.restorationIdentifier = emptyDataIdentifier
         
     }
+    
 }
+

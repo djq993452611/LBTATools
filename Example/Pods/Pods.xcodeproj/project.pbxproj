@@ -11,8 +11,6 @@
 		2E0967D10C63BBF8B6CBFCC56F002875 /* Pods-LBTATools_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE995A1FFAE91C1537E5892F33E7F2A9 /* Pods-LBTATools_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30FB21451D0133B18E0EB181BAEC23C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		4C05BD6D9AEFE748C8C8C8F755954E47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		4D0D641124FE4B29000BC097 /* empty-image-default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0D640F24FE4B29000BC097 /* empty-image-default@3x.png */; };
-		4D0D641224FE4B29000BC097 /* empty-image-default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0D641024FE4B29000BC097 /* empty-image-default@2x.png */; };
 		58A2D3C4810B853AB65A7CD43EEF0CE6 /* LBTATools-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0F0843CB652163CEF6775E82A466F3 /* LBTATools-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7EEDF84966A2DBE3E815B9D3FA26708 /* Pods-LBTATools_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1027D915975CABCA54198E4BF7E886 /* Pods-LBTATools_Example-dummy.m */; };
 		C5C6DA5C8578B5C098EA406E03E6DC57 /* LBTATools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D54E2B554C65128895FFB034275DEA43 /* LBTATools-dummy.m */; };
@@ -64,8 +62,8 @@
 		432EB96722FC13C88529CE56BEECD6D9 /* LBTATools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LBTATools-prefix.pch"; sourceTree = "<group>"; };
 		44421C30BF10962BEC2CAC07259D8FCE /* LBTATools-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LBTATools-Info.plist"; sourceTree = "<group>"; };
 		44B68D65453215BA4A54E5F856452F30 /* Pods-LBTATools_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LBTATools_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		4D0D640F24FE4B29000BC097 /* empty-image-default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty-image-default@3x.png"; sourceTree = "<group>"; };
-		4D0D641024FE4B29000BC097 /* empty-image-default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty-image-default@2x.png"; sourceTree = "<group>"; };
+		4D0D641A24FE6C0D000BC097 /* LBAToolBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LBAToolBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0D641C24FE6C0D000BC097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		545DB73445919F35A4C5C8FFB2A4AB58 /* Pods-LBTATools_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LBTATools_Example-umbrella.h"; sourceTree = "<group>"; };
 		59BA5F23A9D7E1F399B93C11CB0BE723 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		613ED085BBA82A20C840B6D1077F1460 /* Pods_LBTATools_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBTATools_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +122,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4D0D641724FE6C0D000BC097 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC06010C9F6BA9ABB5468D8AF7143800 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,15 +172,22 @@
 				C461D104C9675744C1C27BB4BFD65B11 /* LBTATools.framework */,
 				613ED085BBA82A20C840B6D1077F1460 /* Pods_LBTATools_Example.framework */,
 				BF5876F33DEE0B74E69612F71BC7D089 /* Pods_LBTATools_Tests.framework */,
+				4D0D641A24FE6C0D000BC097 /* LBAToolBundle.bundle */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4D0D641B24FE6C0D000BC097 /* LBAToolBundle */ = {
+			isa = PBXGroup;
+			children = (
+				4D0D641C24FE6C0D000BC097 /* Info.plist */,
+			);
+			path = LBAToolBundle;
 			sourceTree = "<group>";
 		};
 		705CC00C7215399513AC5A0AB8DA982A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4D0D641024FE4B29000BC097 /* empty-image-default@2x.png */,
-				4D0D640F24FE4B29000BC097 /* empty-image-default@3x.png */,
 				A9131C9D56B1D5DE6B3EDFE0929282DB /* LBTATools.modulemap */,
 				1B975D096FEE245B4FEAB02FE23785F9 /* LBTATools.xcconfig */,
 				D54E2B554C65128895FFB034275DEA43 /* LBTATools-dummy.m */,
@@ -292,6 +304,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BE25BB577ED601B57260C48EA3526DEE /* Development Pods */,
+				4D0D641B24FE6C0D000BC097 /* LBAToolBundle */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				49A6CEB78450B2327C525D2FCCFD7DC0 /* Products */,
 				FD72354D329FB50379A0DD698DB3ABCB /* Targets Support Files */,
@@ -345,6 +358,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4D0D641924FE6C0D000BC097 /* LBAToolBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D0D641D24FE6C0D000BC097 /* Build configuration list for PBXNativeTarget "LBAToolBundle" */;
+			buildPhases = (
+				4D0D641624FE6C0D000BC097 /* Sources */,
+				4D0D641724FE6C0D000BC097 /* Frameworks */,
+				4D0D641824FE6C0D000BC097 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LBAToolBundle;
+			productName = LBAToolBundle;
+			productReference = 4D0D641A24FE6C0D000BC097 /* LBAToolBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		8FCDFEF080EF657941335BA83D24993B /* Pods-LBTATools_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8A715901A083E881251D2EC2784DA3E /* Build configuration list for PBXNativeTarget "Pods-LBTATools_Example" */;
@@ -410,6 +440,10 @@
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 1020;
 				TargetAttributes = {
+					4D0D641924FE6C0D000BC097 = {
+						CreatedOnToolsVersion = 11.6;
+						ProvisioningStyle = Automatic;
+					};
 					D2BFA3BE032AB313FBF0174E51D0E309 = {
 						LastSwiftMigration = 1020;
 					};
@@ -431,12 +465,20 @@
 				D2BFA3BE032AB313FBF0174E51D0E309 /* LBTATools */,
 				8FCDFEF080EF657941335BA83D24993B /* Pods-LBTATools_Example */,
 				B7AA6319BE2C030C15392E7E5C3D7BDF /* Pods-LBTATools_Tests */,
+				4D0D641924FE6C0D000BC097 /* LBAToolBundle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2AF96ECA3A2917BA370B6D3F8FE33284 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D0D641824FE6C0D000BC097 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -454,8 +496,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D0D641224FE4B29000BC097 /* empty-image-default@2x.png in Resources */,
-				4D0D641124FE4B29000BC097 /* empty-image-default@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +507,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7EEDF84966A2DBE3E815B9D3FA26708 /* Pods-LBTATools_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D0D641624FE6C0D000BC097 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +667,42 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		4D0D641E24FE6C0D000BC097 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LBAToolBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = maisha.LBAToolBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		4D0D641F24FE6C0D000BC097 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LBAToolBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = maisha.LBAToolBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		6181DA8CE5E1402E3AF16CF26728E2A7 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -863,6 +946,15 @@
 			buildConfigurations = (
 				AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */,
 				F232B5ECA11A71BFA199A229B323F454 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D0D641D24FE6C0D000BC097 /* Build configuration list for PBXNativeTarget "LBAToolBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D0D641E24FE6C0D000BC097 /* Debug */,
+				4D0D641F24FE6C0D000BC097 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
