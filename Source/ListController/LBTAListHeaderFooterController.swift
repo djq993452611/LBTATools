@@ -38,6 +38,8 @@ open class LBTAListHeaderFooterController<T: LBTAListCell<U>, U, H: UICollection
             }
         }
     }
+    //MARK:
+    open var headerHeight: CGFloat = 0
     
     fileprivate let cellId = "cellId"
     fileprivate let supplementaryViewId = "supplementaryViewId"
@@ -55,14 +57,9 @@ open class LBTAListHeaderFooterController<T: LBTAListCell<U>, U, H: UICollection
     
     override open func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.init(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1)
+        collectionView.backgroundColor = .white
         
-        #if os(iOS)
-        if #available(iOS 13.0, *) {
-            collectionView.backgroundColor = .systemBackground
-        } else {
-            collectionView.backgroundColor = .white
-        }
-        #endif
         
         collectionView.register(T.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(H.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: supplementaryViewId)
@@ -137,10 +134,10 @@ open class LBTAListHeaderFooterController<T: LBTAListCell<U>, U, H: UICollection
     //MARK:任何添加空白页内容
     func showEmptyDataImage() {
         
-        let bottomView = UIView(frame: CGRect(x: 0, y: 0, width: 152, height: 160))
+        let bottomView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 140))
         //这里注意图片资源的名字，在项目图片资源导入
         let emptyImage = UIImageView(image: UIImage(named: "empty-image-default"))
-        emptyImage.frame = CGRect(x: 0, y: 0, width: 152, height: 100)
+        emptyImage.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         bottomView.addSubview(emptyImage)
         
         let nameLabel = UILabel.init()
@@ -148,16 +145,23 @@ open class LBTAListHeaderFooterController<T: LBTAListCell<U>, U, H: UICollection
         nameLabel.textColor = UIColor.lightGray //UIColor(red: 153, green: 153, blue: 153, alpha: 1)
         nameLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         nameLabel.textAlignment = .center
-        nameLabel.frame = CGRect(x: 0, y: 110, width: 152, height: 20)
+        nameLabel.frame = CGRect(x: 0, y: 110, width: 100, height: 20)
         bottomView.addSubview(nameLabel)
         
         self.view.addSubview(bottomView)
         self.view.bringSubviewToFront(bottomView)
-        bottomView.withWidth(152).withHeight(160)
-        bottomView.centerInSuperview()
         bottomView.restorationIdentifier = emptyDataIdentifier
+        bottomView.withWidth(100).withHeight(140)
+       
+        if headerHeight == 0 {
+            bottomView.centerInSuperview()
+        }else {
+            bottomView.anchor(.top(self.view.topAnchor, constant: headerHeight+10))
+            bottomView.centerXToSuperview()
+        }
         
     }
     
 }
+
 
