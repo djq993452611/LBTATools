@@ -10,7 +10,7 @@ import LBTATools
 
 class ExampleCell: LBTAListCell<String> {
     
-    let titleLabel = UILabel(text: "Title", font: .systemFont(ofSize: 16))
+    let titleLabel = UILabel(text: "EXampleName", color: UIColor.darkGray, font: .systemFont(ofSize: 16)) 
     
     override var item: String! {
         didSet {

@@ -12,7 +12,7 @@ import LBTATools
 class SimpleVerticalStackCell: UICollectionViewCell {
     
     let imageView = UIImageView(image: #imageLiteral(resourceName: "girl.png"), contentMode: .scaleAspectFill)
-    let nameLabel = UILabel(text: "Girly McGirly", textAlignment: .center)
+    let nameLabel = UILabel(text: "Girly McGirly", color: UIColor.darkGray, font: UIFont.systemFont(ofSize: 16), alignment: .center)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,8 +35,8 @@ class SimpleVerticalStackCell: UICollectionViewCell {
 class HorizontalStackingCell: UICollectionViewCell {
     
     let imageView = UIImageView(image: #imageLiteral(resourceName: "girl.png"), contentMode: .scaleAspectFill)
-    let nameLabel = UILabel(text: "Girly McGirly", font: .boldSystemFont(ofSize: 14))
-    let messageLabel = UILabel(text: "Did you enjoy last night? I had a great time. Let's meet up again later this week, I'll show you what's up", font: .systemFont(ofSize: 12), textColor: .gray, numberOfLines: 2)
+    let nameLabel = UILabel(text: "Girly McGirly", color: .gray, font: .boldSystemFont(ofSize: 14))
+    let messageLabel = UILabel(text: "Did you enjoy last night? I had a great time. Let's meet up again later this week, I'll show you what's up", color: .gray, font: UIFont.systemFont(ofSize: 12), alignment: .left, numberOfLines: 2) 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,10 +60,10 @@ class HorizontalStackingCell: UICollectionViewCell {
 class StackingWithMarginsCell: UICollectionViewCell {
     
     let imageView = UIImageView(image: #imageLiteral(resourceName: "girl.png"), contentMode: .scaleAspectFill)
-    let nameLabel = UILabel(text: "Girly McGirly", font: .boldSystemFont(ofSize: 14))
-    let messageLabel = UILabel(text: "Did you enjoy last night? I had a great time. Let's meet up again later this week, I'll show you what's up", font: .systemFont(ofSize: 12), textColor: .gray, numberOfLines: 2)
-    
-    let exploreLabel = UILabel(text: "Explore", font: .boldSystemFont(ofSize: 12))
+    let nameLabel = UILabel(text: "Girly McGirly", color: .gray, font: .boldSystemFont(ofSize: 14))
+    let messageLabel = UILabel(text: "Did you enjoy last night? I had a great time. Let's meet up again later this week, I'll show you what's up", color: .gray, font: UIFont.systemFont(ofSize: 12), alignment: .left, numberOfLines: 2)
+        
+    let exploreLabel = UILabel(text: "Explore", color: .gray, font: .boldSystemFont(ofSize: 12))
     
     let arrowImageView = UIImageView(image: #imageLiteral(resourceName: "girl.png"))
     

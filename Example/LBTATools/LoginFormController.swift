@@ -15,30 +15,34 @@ class LoginFormController: LBTAFormController {
     let usernameTextField = IndentedTextField(placeholder: "Username", padding: 12, cornerRadius: 5, backgroundColor: .white)
     let nameTextField = IndentedTextField(placeholder: "Full name", padding: 12, cornerRadius: 5, backgroundColor: .white)
     let passwordTextField = IndentedTextField(placeholder: "Password", padding: 12, cornerRadius: 5, backgroundColor: .white, isSecureTextEntry: true)
-    
-    let signUpButton =  UIButton(title: "Sign Up", titleColor: .white, font: .boldSystemFont(ofSize: 16), backgroundColor: #colorLiteral(red: 0.2883880436, green: 0.5055884719, blue: 0.9490465522, alpha: 1), target: self, action: #selector(handleCancel))
-    let cancelButton = UIButton(title: "Cancel", titleColor: .white, font: .boldSystemFont(ofSize: 16), backgroundColor: .red, target: self, action: #selector(handleCancel))
+    let signUpButton = UIButton(onlyTitle: "Sign Up", titleColor: .white, font: UIFont.boldSystemFont(ofSize: 16), backgroundColor: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
+    let cancelButton = UIButton(onlyTitle: "Cancel", titleColor: .white, font: UIFont.boldSystemFont(ofSize: 16), backgroundColor: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
+      
     
     @objc fileprivate func handleCancel() {
         dismiss(animated: true)
     }
     
-    let orLabel = UILabel(text: "or use the following", font: .systemFont(ofSize: 16), textColor: .black, textAlignment: .center)
+    let orLabel = UILabel(text: "or use the following", color: .black, font: UIFont.systemFont(ofSize: 16), alignment: .center, numberOfLines: 1)
     
-    let fbButton = UIButton(image: #imageLiteral(resourceName: "fb_circle.png").withRenderingMode(.alwaysOriginal))
-    let twitterButton = UIButton(image: #imageLiteral(resourceName: "twitter_circle").withRenderingMode(.alwaysOriginal))
-    let linkedInButton = UIButton(image: #imageLiteral(resourceName: "github_circle").withRenderingMode(.alwaysOriginal))
+    let fbButton = UIButton(onlyImage: #imageLiteral(resourceName: "fb_circle").withRenderingMode(.alwaysOriginal))
+    let twitterButton = UIButton(onlyImage: #imageLiteral(resourceName: "twitter_circle").withRenderingMode(.alwaysOriginal))
+    let linkedInButton = UIButton(onlyImage: #imageLiteral(resourceName: "github_circle").withRenderingMode(.alwaysOriginal))
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        signUpButton.addTarget(self, action: #selector(handleCancel), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(handleCancel), for: .touchUpInside)
         
         view.backgroundColor = .init(white: 0.95, alpha: 1)
         
         emailTextField.autocorrectionType = .no
         signUpButton.layer.cornerRadius = 5
         cancelButton.layer.cornerRadius = 5
-        
         orLabel.constrainHeight(44)
+        
+        
         
         [emailTextField, usernameTextField, nameTextField, passwordTextField, signUpButton, cancelButton].forEach{$0.constrainHeight(50)}
         imageView.constrainHeight(64)
