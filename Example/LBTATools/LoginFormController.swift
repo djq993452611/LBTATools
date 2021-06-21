@@ -16,7 +16,7 @@ class LoginFormController: LBTAFormController {
     let nameTextField = IndentedTextField(placeholder: "Full name", padding: 12, cornerRadius: 5, backgroundColor: .white)
     let passwordTextField = IndentedTextField(placeholder: "Password", padding: 12, cornerRadius: 5, backgroundColor: .white, isSecureTextEntry: true)
     
-    let signUpButton = UIButton(title: "Sign Up", titleColor: .white, font: .boldSystemFont(ofSize: 16), backgroundColor: #colorLiteral(red: 0.2883880436, green: 0.5055884719, blue: 0.9490465522, alpha: 1), target: self, action: #selector(handleCancel))
+    let signUpButton =  UIButton(title: "Sign Up", titleColor: .white, font: .boldSystemFont(ofSize: 16), backgroundColor: #colorLiteral(red: 0.2883880436, green: 0.5055884719, blue: 0.9490465522, alpha: 1), target: self, action: #selector(handleCancel))
     let cancelButton = UIButton(title: "Cancel", titleColor: .white, font: .boldSystemFont(ofSize: 16), backgroundColor: .red, target: self, action: #selector(handleCancel))
     
     @objc fileprivate func handleCancel() {

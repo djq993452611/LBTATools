@@ -11,6 +11,8 @@
 		2E0967D10C63BBF8B6CBFCC56F002875 /* Pods-LBTATools_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE995A1FFAE91C1537E5892F33E7F2A9 /* Pods-LBTATools_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30FB21451D0133B18E0EB181BAEC23C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		4C05BD6D9AEFE748C8C8C8F755954E47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		4D577BBC267C8E950047AD11 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D577BBA267C8E950047AD11 /* UIButton+Extension.swift */; };
+		4D577BBD267C8E950047AD11 /* UIILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D577BBB267C8E950047AD11 /* UIILabel+Extension.swift */; };
 		58A2D3C4810B853AB65A7CD43EEF0CE6 /* LBTATools-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0F0843CB652163CEF6775E82A466F3 /* LBTATools-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7EEDF84966A2DBE3E815B9D3FA26708 /* Pods-LBTATools_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1027D915975CABCA54198E4BF7E886 /* Pods-LBTATools_Example-dummy.m */; };
 		C5C6DA5C8578B5C098EA406E03E6DC57 /* LBTATools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D54E2B554C65128895FFB034275DEA43 /* LBTATools-dummy.m */; };
@@ -60,6 +62,8 @@
 		44B68D65453215BA4A54E5F856452F30 /* Pods-LBTATools_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LBTATools_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		4D0D641A24FE6C0D000BC097 /* LBAToolBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LBAToolBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0D641C24FE6C0D000BC097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D577BBA267C8E950047AD11 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		4D577BBB267C8E950047AD11 /* UIILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIILabel+Extension.swift"; sourceTree = "<group>"; };
 		545DB73445919F35A4C5C8FFB2A4AB58 /* Pods-LBTATools_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LBTATools_Example-umbrella.h"; sourceTree = "<group>"; };
 		59BA5F23A9D7E1F399B93C11CB0BE723 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		613ED085BBA82A20C840B6D1077F1460 /* Pods_LBTATools_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBTATools_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +274,8 @@
 		C7516F0F227A569D004F5452 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4D577BBA267C8E950047AD11 /* UIButton+Extension.swift */,
+				4D577BBB267C8E950047AD11 /* UIILabel+Extension.swift */,
 				C7516EFD227A3CD3004F5452 /* UIView+Stacking.swift */,
 				C7516EFE227A3CD3004F5452 /* UIView+Layout.swift */,
 				C7516F12227A7032004F5452 /* UIStackView.swift */,
@@ -511,12 +517,14 @@
 			files = (
 				C7516F00227A3CD3004F5452 /* UIView+Stacking.swift in Sources */,
 				C7516F0E227A55BC004F5452 /* CircularImageView.swift in Sources */,
+				4D577BBD267C8E950047AD11 /* UIILabel+Extension.swift in Sources */,
 				C7516F5A228281E1004F5452 /* IndentedTextField.swift in Sources */,
 				C7516F0A227A54B0004F5452 /* LBTAListCell.swift in Sources */,
 				C7516F5C22828A9D004F5452 /* AspectFitImageView.swift in Sources */,
 				C7516F852284C11E004F5452 /* LBTAListHeaderController.swift in Sources */,
 				C78989A6228E3DC5002B4E20 /* LBTAFormController.swift in Sources */,
 				C7B72E8B22C2C8F70022E227 /* LBTAListHeaderFooterController.swift in Sources */,
+				4D577BBC267C8E950047AD11 /* UIButton+Extension.swift in Sources */,
 				C7516F09227A54B0004F5452 /* LBTAListController.swift in Sources */,
 				C7516F06227A452C004F5452 /* UIColor+Helpers.swift in Sources */,
 				C5C6DA5C8578B5C098EA406E03E6DC57 /* LBTATools-dummy.m in Sources */,
