@@ -26,10 +26,20 @@ extension UIView {
     open func stack(_ views: UIView..., spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill) -> UIStackView {
         return _stack(.vertical, views: views, spacing: spacing, alignment: alignment, distribution: distribution)
     }
+    @discardableResult
+    open func stack(viewArray: [UIView], spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill) -> UIStackView {
+        return _stack(.vertical, views: viewArray, spacing: spacing, alignment: alignment, distribution: distribution)
+    }
     
+    //views参数，挨个视图逗号分割传递
     @discardableResult
     open func hstack(_ views: UIView..., spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill) -> UIStackView {
         return _stack(.horizontal, views: views, spacing: spacing, alignment: alignment, distribution: distribution)
+    }
+    //viewArray参数, 视图数组传递
+    @discardableResult
+    open func hstack(viewArray: [UIView], spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill) -> UIStackView {
+        return _stack(.horizontal, views: viewArray, spacing: spacing, alignment: alignment, distribution: distribution)
     }
     
     @discardableResult
